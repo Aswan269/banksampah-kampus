@@ -57,31 +57,57 @@ jobs:
             ${{ env.IMAGE }}:latest
             ${{ env.IMAGE }}:${{ github.sha }}
 
-  # ---------- CD: deploy otomatis ke server lewat SSH ----------
+  # ---------- CD: deploy otomatis ke laptop (self-hosted runner Windows) ----------
   deploy:
     needs: build-push
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, windows]
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    concurrency:
+      group: deploy-laptop
+      cancel-in-progress: false
+    defaults:
+      run:
+        shell: powershell
     steps:
       - uses: actions/checkout@v4
-      - name: Nama owner huruf kecil
-        run: echo "OWNER=${GITHUB_REPOSITORY_OWNER,,}" >> $GITHUB_ENV
-      - name: Kirim docker-compose.yml ke server
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          source: docker-compose.yml
-          target: ~/banksampah
+
       - name: Pull image terbaru & jalankan ulang
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd ~/banksampah
-            export REGISTRY=ghcr.io/${{ env.OWNER }}
-            docker compose pull
-            docker compose up -d --no-build
-            docker image prune -f
+        run: |
+          $ErrorActionPreference = 'Continue'
+          $env:REGISTRY = "ghcr.io/$($env:GITHUB_REPOSITORY_OWNER.ToLower())"
+          Write-Host "REGISTRY = $env:REGISTRY"
+
+          docker compose -p banksampah pull
+          if ($LASTEXITCODE -ne 0) { Write-Host "::error::docker compose pull gagal"; exit $LASTEXITCODE }
+
+          docker compose -p banksampah up -d --no-build
+          if ($LASTEXITCODE -ne 0) { Write-Host "::error::docker compose up gagal"; exit $LASTEXITCODE }
+
+          docker image prune -f
+          exit 0
+
+      - name: Cek kesehatan lewat gateway
+        run: |
+          $ErrorActionPreference = 'Continue'
+          $urls = @('auth', 'setoran', 'reward', 'laporan' | ForEach-Object { "http://localhost:8080/api/$_/health" })
+          $urls += 'http://localhost:8080/'
+          foreach ($u in $urls) {
+            $ok = $false
+            for ($i = 1; $i -le 30; $i++) {
+              try {
+                $r = Invoke-WebRequest -Uri $u -UseBasicParsing -TimeoutSec 5 -ErrorAction Stop
+                if ($r.StatusCode -eq 200) { $ok = $true; break }
+              } catch { }
+              Start-Sleep -Seconds 3
+            }
+            if (-not $ok) {
+              Write-Host "::error::$u tidak merespons 200"
+              docker compose -p banksampah ps
+              docker compose -p banksampah logs --tail 50
+              exit 1
+            }
+            Write-Host "OK  $u"
+          }
+          exit 0
