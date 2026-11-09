@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "Aswan269/banksampah-kampus",
+  "pipelineDirectory": "banksampah-kampus",
+  "workspaceDirectory": "banksampah-kampus\\banksampah-kampus",
+  "repositories": {
+    "Aswan269/banksampah-kampus": {
+      "repositoryPath": "banksampah-kampus\\banksampah-kampus",
+      "lastRunOn": "11/08/2026 16:09:22 +07:00"
+    }
+  },
+  "lastRunOn": "11/08/2026 16:13:34 +07:00"
+}

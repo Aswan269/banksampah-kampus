@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 3,
+  "agentName": "aswan",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus14.actions.githubusercontent.com/kKU3gbIXHbNaFF5n6rnXmaVDsVGpCqSmO3aDZ4d1S17vlFloEH/",
+  "gitHubUrl": "https://github.com/Aswan269/banksampah-kampus",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}
