@@ -1,0 +1,3824 @@
+[2026-11-09 10:59:19Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known config file 'Credentials': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.credentials'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known config file 'Runner': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.runner'
+[2026-11-09 10:59:19Z INFO Worker] Version: 2.338.2
+[2026-11-09 10:59:19Z INFO Worker] Commit: d1eb12d4b115c301201de27d667284e1a80f2ab5
+[2026-11-09 10:59:19Z INFO Worker] Culture: en-ID
+[2026-11-09 10:59:19Z INFO Worker] UI Culture: en-US
+[2026-11-09 10:59:19Z INFO Worker] Waiting to receive the job message from the channel.
+[2026-11-09 10:59:19Z INFO ProcessChannel] Receiving message of length 24104, with hash 'b8a5a26cc9f5ddf04187cb237ea83906f70342345d33f7b9e238de113f750572'
+[2026-11-09 10:59:19Z INFO Worker] Message received.
+[2026-11-09 10:59:19Z INFO Worker] Job message:
+ {
+  "defaults": [
+    {
+      "type": 2,
+      "file": 1,
+      "line": 71,
+      "col": 7,
+      "map": [
+        {
+          "key": {
+            "type": 0,
+            "file": 1,
+            "line": 71,
+            "col": 7,
+            "lit": "run"
+          },
+          "value": {
+            "type": 2,
+            "file": 1,
+            "line": 72,
+            "col": 9,
+            "map": [
+              {
+                "key": {
+                  "type": 0,
+                  "file": 1,
+                  "line": 72,
+                  "col": 9,
+                  "lit": "shell"
+                },
+                "value": {
+                  "type": 0,
+                  "file": 1,
+                  "line": 72,
+                  "col": 16,
+                  "lit": "powershell"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "fileTable": [
+    ".github/workflows/ci-cd.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v4",
+        "repositoryType": "GitHub"
+      },
+      "contextName": "__actions_checkout",
+      "condition": "success()",
+      "id": "3cf4363b-8b62-4052-adc2-729306bfa096",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 76,
+        "col": 15,
+        "lit": "Pull image terbaru & jalankan ulang"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 77,
+              "col": 14,
+              "lit": "$ErrorActionPreference = 'Continue'\n$env:REGISTRY = \"ghcr.io/$($env:GITHUB_REPOSITORY_OWNER.ToLower())\"\nWrite-Host \"REGISTRY = $env:REGISTRY\"\n\ndocker compose -p banksampah pull\nif ($LASTEXITCODE -ne 0) { Write-Host \"::error::docker compose pull gagal\"; exit $LASTEXITCODE }\n\ndocker compose -p banksampah up -d --no-build\nif ($LASTEXITCODE -ne 0) { Write-Host \"::error::docker compose up gagal\"; exit $LASTEXITCODE }\n\ndocker image prune -f\nexit 0\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "90182ae6-f891-4203-b02f-391e653448ea",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 91,
+        "col": 15,
+        "lit": "Cek kesehatan lewat gateway"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 92,
+              "col": 14,
+              "lit": "$ErrorActionPreference = 'Continue'\n$urls = @('auth', 'setoran', 'reward', 'laporan' | ForEach-Object { \"http://localhost:8080/api/$_/health\" })\n$urls += 'http://localhost:8080/'\nforeach ($u in $urls) {\n  $ok = $false\n  for ($i = 1; $i -le 30; $i++) {\n    try {\n      $r = Invoke-WebRequest -Uri $u -UseBasicParsing -TimeoutSec 5 -ErrorAction Stop\n      if ($r.StatusCode -eq 200) { $ok = $true; break }\n    } catch { }\n    Start-Sleep -Seconds 3\n  }\n  if (-not $ok) {\n    Write-Host \"::error::$u tidak merespons 200\"\n    docker compose -p banksampah ps\n    docker compose -p banksampah logs --tail 50\n    exit 1\n  }\n  Write-Host \"OK  $u\"\n}\nexit 0"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "9f4162ab-ca8c-43f9-a3c2-54abac0d82a4",
+      "name": "__run_2"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions.runner.requirenode24": {
+      "value": "true"
+    },
+    "actions.runner.usenode24bydefault": {
+      "value": "true"
+    },
+    "actions.runner.warnonnode20": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "true"
+    },
+    "actions_batch_action_resolution": {
+      "value": "false"
+    },
+    "actions_cache_mode": {
+      "value": "write"
+    },
+    "actions_container_action_runner_temp": {
+      "value": "true"
+    },
+    "actions_display_helpful_actions_download_errors": {
+      "value": "true"
+    },
+    "actions_runner_allow_artifacts_file": {
+      "value": "true"
+    },
+    "actions_runner_compare_workflow_parser": {
+      "value": "false"
+    },
+    "actions_runner_deprecate_linux_arm32": {
+      "value": "true"
+    },
+    "actions_runner_emit_composite_markers": {
+      "value": "true"
+    },
+    "actions_runner_kill_linux_arm32": {
+      "value": "true"
+    },
+    "actions_runner_node20_removal_date": {
+      "value": "September 23rd, 2026"
+    },
+    "actions_runner_node24_default_date": {
+      "value": "June 16th, 2026"
+    },
+    "actions_self_repository": {
+      "value": "true"
+    },
+    "actions_service_container_command": {
+      "value": "true"
+    },
+    "actions_set_orchestration_id_env_for_actions": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_snapshot_preflight_hosted_runner_check": {
+      "value": "false"
+    },
+    "actions_snapshot_preflight_image_gen_pool_check": {
+      "value": "false"
+    },
+    "actions_use_bearer_token_for_codeload": {
+      "value": "false"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "deploy"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\"}"
+    },
+    "system.orchestrationId": {
+      "value": "d2f96f27-1ec0-885b-b1ae-b44f7bf13af4.deploy.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "deploy"
+    },
+    "system.runner.brokerwebsocketprobeurl": {
+      "value": "wss://broker.actions.githubusercontent.com/_ws/ping.sock"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "d2f96f27-1ec0-885b-b1ae-b44f7bf13af4",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "d2f96f27-1ec0-885b-b1ae-b44f7bf13af4",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "ca662d34-9e0a-5a6f-972d-8b03617cba53",
+  "jobDisplayName": "deploy",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/kKU3gbIXHbNaFF5n6rnXmaVDsVGpCqSmO3aDZ4d1S17vlFloEH/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus14.actions.githubusercontent.com/kKU3gbIXHbNaFF5n6rnXmaVDsVGpCqSmO3aDZ4d1S17vlFloEH/",
+          "GenerateIdTokenUrl": "",
+          "ConnectivityChecks": "[\"https://broker.actions.githubusercontent.com/health\",\"https://token.actions.githubusercontent.com/ready\",\"https://run.actions.githubusercontent.com/health\"]",
+          "ConnectivityAndDNSChecks": "[\"https://github.com/_dns\",\"https://api.github.com/_dns\",\"https://codeload.github.com/_dns\",\"https://pkg.github.com/_dns\",\"https://copilot-proxy.githubusercontent.com/_dns\"]"
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-2-azure-eastus.actions.githubusercontent.com/68/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "21362ff30689b903014d1982903f2d974668faf8"
+        },
+        {
+          "k": "repository",
+          "v": "Aswan269/banksampah-kampus"
+        },
+        {
+          "k": "repository_owner",
+          "v": "Aswan269"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "148049978"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/Aswan269/banksampah-kampus.git"
+        },
+        {
+          "k": "run_id",
+          "v": "42605182030"
+        },
+        {
+          "k": "run_number",
+          "v": "3"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "148049978"
+        },
+        {
+          "k": "actor",
+          "v": "Aswan269"
+        },
+        {
+          "k": "workflow",
+          "v": "CI-CD BankSampah Kampus"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "21362ff30689b903014d1982903f2d974668faf8"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "5270613a0bc41596dcc1ae273c8f3eba23ff08e7"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "maswantaqiy@gmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Aswan269"
+                              },
+                              {
+                                "k": "username",
+                                "v": "Aswan269"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "maswantaqiy@gmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Aswan269"
+                              },
+                              {
+                                "k": "username",
+                                "v": "Aswan269"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "21362ff30689b903014d1982903f2d974668faf8"
+                        },
+                        {
+                          "k": "message",
+                          "v": "perubahan kecil"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2026-11-09T17:57:37+07:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "5bed0bc446eaa1c049aa4fab284114a60624a69c"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/Aswan269/banksampah-kampus/commit/21362ff30689b903014d1982903f2d974668faf8"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/Aswan269/banksampah-kampus/compare/5270613a0bc4...21362ff30689"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "maswantaqiy@gmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Aswan269"
+                          },
+                          {
+                            "k": "username",
+                            "v": "Aswan269"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "maswantaqiy@gmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Aswan269"
+                          },
+                          {
+                            "k": "username",
+                            "v": "Aswan269"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "21362ff30689b903014d1982903f2d974668faf8"
+                    },
+                    {
+                      "k": "message",
+                      "v": "perubahan kecil"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2026-11-09T17:57:37+07:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "5bed0bc446eaa1c049aa4fab284114a60624a69c"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/Aswan269/banksampah-kampus/commit/21362ff30689b903014d1982903f2d974668faf8"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "148049978+Aswan269@users.noreply.github.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "Aswan269"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/Aswan269/banksampah-kampus.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1794126728.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "Aswan269/banksampah-kampus"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/Aswan269/banksampah-kampus.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pull_requests",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/Aswan269/banksampah-kampus"
+                    },
+                    {
+                      "k": "id",
+                      "v": 1450107185.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "Python"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "banksampah-kampus"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOVm7hMQ"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/148049978?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "148049978+Aswan269@users.noreply.github.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/Aswan269/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/Aswan269/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/Aswan269/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/Aswan269/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/Aswan269"
+                          },
+                          {
+                            "k": "id",
+                            "v": 148049978.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "Aswan269"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Aswan269"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "U_kgDOCNMQOg"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/Aswan269/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/Aswan269/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/Aswan269/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/Aswan269/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/Aswan269/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/Aswan269"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pull_request_creation_policy",
+                      "v": "all"
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1794221890.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 18.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:Aswan269/banksampah-kampus.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/Aswan269/banksampah-kampus"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2026-11-08T09:08:31Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/Aswan269/banksampah-kampus"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/148049978?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/Aswan269/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/Aswan269/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/Aswan269/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/Aswan269/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/Aswan269"
+                    },
+                    {
+                      "k": "id",
+                      "v": 148049978.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "Aswan269"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "U_kgDOCNMQOg"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/Aswan269/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/Aswan269/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/Aswan269/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/Aswan269/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/Aswan269/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/Aswan269"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "Aswan269/banksampah-kampus/.github/workflows/ci-cd.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "21362ff30689b903014d1982903f2d974668faf8"
+        },
+        {
+          "k": "repository_id",
+          "v": "1450107185"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "Aswan269"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "job": {
+      "t": 2,
+      "d": [
+        {
+          "k": "check_run_id",
+          "v": 129119679714.0
+        },
+        {
+          "k": "workflow_ref",
+          "v": "Aswan269/banksampah-kampus/.github/workflows/ci-cd.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "21362ff30689b903014d1982903f2d974668faf8"
+        },
+        {
+          "k": "workflow_repository",
+          "v": "Aswan269/banksampah-kampus"
+        },
+        {
+          "k": "workflow_file_path",
+          "v": ".github/workflows/ci-cd.yml"
+        }
+      ]
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2,
+      "d": [
+        {
+          "k": "build-push",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "result",
+                "v": "success"
+              },
+              {
+                "k": "outputs",
+                "v": {
+                  "t": 2
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDOCNMQOg"
+}
+[2026-11-09 10:59:19Z INFO JobRunner] Job ID ca662d34-9e0a-5a6f-972d-8b03617cba53
+[2026-11-09 10:59:19Z INFO ConfigurationStore] currentAssemblyLocation: D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin\Runner.Worker.dll
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO ConfigurationStore] binPath: D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO ConfigurationStore] RootFolder: D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known config file 'Runner': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.runner'
+[2026-11-09 10:59:19Z INFO ConfigurationStore] ConfigFilePath: D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.runner
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known config file 'MigratedRunner': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.runner_migrated'
+[2026-11-09 10:59:19Z INFO ConfigurationStore] MigratedConfigFilePath: D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.runner_migrated
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known config file 'Credentials': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.credentials'
+[2026-11-09 10:59:19Z INFO ConfigurationStore] CredFilePath: D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.credentials
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known config file 'MigratedCredentials': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.credentials_migrated'
+[2026-11-09 10:59:19Z INFO ConfigurationStore] MigratedCredFilePath: D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.credentials_migrated
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known config file 'Service': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.service'
+[2026-11-09 10:59:19Z INFO ConfigurationStore] ServiceConfigFilePath: D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.service
+[2026-11-09 10:59:19Z INFO ConfigurationStore] Read setting file: 395 chars
+[2026-11-09 10:59:19Z INFO JobRunner] Initializing launch client
+[2026-11-09 10:59:19Z INFO JobServerQueue] Initializing results client
+[2026-11-09 10:59:19Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2026-11-09 10:59:19Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2026-11-09 10:59:19Z INFO JobServerQueue] Start process web console line queue.
+[2026-11-09 10:59:19Z INFO JobServerQueue] Start process file upload queue.
+[2026-11-09 10:59:19Z INFO JobServerQueue] Start results file upload queue.
+[2026-11-09 10:59:19Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-11-09 10:59:19Z INFO JobServerQueue] Start process timeline update queue.
+[2026-11-09 10:59:19Z INFO ExecutionContext] Initializing Job context
+[2026-11-09 10:59:19Z INFO ExecutionContext] Initialize GitHub context
+[2026-11-09 10:59:19Z INFO ExecutionContext] Initialize Env context
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:19Z INFO JobRunner] Starting the job execution context.
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:19Z INFO JobRunner] Validating directory permissions for: 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Tools': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_tool'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Temp': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp'
+[2026-11-09 10:59:19Z INFO JobRunner] Getting job extension.
+[2026-11-09 10:59:19Z INFO JobRunner] Initialize job. Getting all job steps.
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known config file 'Credentials': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.credentials'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known config file 'SetupInfo': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\.setup_info'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:19Z INFO PipelineDirectoryManager] Loading tracking config if exists: D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_PipelineMapping\Aswan269/banksampah-kampus\PipelineFolder.json
+[2026-11-09 10:59:19Z INFO PipelineDirectoryManager] Updating job run properties.
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:19Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:20Z INFO JobExtension] Downloading actions
+[2026-11-09 10:59:20Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:20Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:20Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:20Z INFO HostContext] Well known directory 'Actions': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions'
+[2026-11-09 10:59:20Z INFO Worker] Listening for cancel message from the channel.
+[2026-11-09 10:59:20Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2026-11-09 10:59:20Z INFO ResultServer] Successfully started websocket client.
+[2026-11-09 10:59:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd89832f0-f5b6-4bde-a219-fcd646d5b744', success rate: 1/1.
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Actions': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions'
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Actions': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions'
+[2026-11-09 10:59:21Z INFO ActionManager] Save archive 'https://codeload.github.com/actions/checkout/zip/11d5960a326750d5838078e36cf38b85af677262' into D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions\_temp_beffb482-19e5-48a3-8c1d-134772f9cc47\c2b40bbc-cdd5-4246-a117-9aa840cb80e7.zip.
+[2026-11-09 10:59:21Z INFO ActionManager] Using Basic token for action archive download.
+[2026-11-09 10:59:21Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd89832f0-f5b6-4bde-a219-fcd646d5b744', success rate: 1/1.
+[2026-11-09 10:59:21Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2026-11-09 10:59:21Z INFO ActionManager] Request URL: https://codeload.github.com/actions/checkout/zip/11d5960a326750d5838078e36cf38b85af677262 X-GitHub-Request-Id: 1FB1:34DF26:193535:330298:6AF1A788 Http Status: OK
+[2026-11-09 10:59:21Z INFO ActionManager] Finished getting action repository.
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Actions': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions'
+[2026-11-09 10:59:21Z INFO ActionManifestManagerLegacy] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2026-11-09 10:59:21Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:21Z INFO HostContext] Well known directory 'Actions': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions'
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 101,
+          "col": 3,
+          "lit": "allow-unsafe-pr-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 109,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-11-09 10:59:22Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Actions': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions'
+[2026-11-09 10:59:22Z INFO ActionManager] Load action that reference repository from 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions\actions\checkout\v4'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Actions': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions'
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 101,
+          "col": 3,
+          "lit": "allow-unsafe-pr-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 109,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-11-09 10:59:22Z INFO ActionManager] Action pre node.js file: N/A.
+[2026-11-09 10:59:22Z INFO ActionManager] Action node.js file: dist/index.js.
+[2026-11-09 10:59:22Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2026-11-09 10:59:22Z INFO JobExtension] Adding .
+[2026-11-09 10:59:22Z INFO JobExtension] Adding .
+[2026-11-09 10:59:22Z INFO JobExtension] Adding .
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:22Z INFO JobExtension] Total accessible running process: 342.
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:22Z INFO JobExtension] Start checking server connectivity.
+[2026-11-09 10:59:22Z INFO JobExtension] Check server connectivity for https://broker.actions.githubusercontent.com/health.
+[2026-11-09 10:59:22Z INFO JobExtension] Check server connectivity for https://token.actions.githubusercontent.com/ready.
+[2026-11-09 10:59:22Z INFO JobExtension] Check server connectivity for https://run.actions.githubusercontent.com/health.
+[2026-11-09 10:59:22Z INFO JobExtension] Start checking server connectivity and DNS.
+[2026-11-09 10:59:22Z INFO JobExtension] Check server connectivity for https://github.com/_dns.
+[2026-11-09 10:59:22Z INFO JobExtension] Check server connectivity for https://api.github.com/_dns.
+[2026-11-09 10:59:22Z INFO JobExtension] Check server connectivity for https://codeload.github.com/_dns.
+[2026-11-09 10:59:22Z INFO JobExtension] Check server connectivity for https://pkg.github.com/_dns.
+[2026-11-09 10:59:22Z INFO JobExtension] Check server connectivity for https://copilot-proxy.githubusercontent.com/_dns.
+[2026-11-09 10:59:22Z INFO JobExtension] Start checking service connectivity in background.
+[2026-11-09 10:59:22Z INFO JobExtension] Start checking runner websocket connectivity in background.
+[2026-11-09 10:59:22Z INFO BrokerServer] Attempting to start runner websocket client.
+[2026-11-09 10:59:22Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "d89832f0-f5b6-4bde-a219-fcd646d5b744",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2026-11-09T10:59:19.9595193Z",
+  "finishTime": "2026-11-09T10:59:22.0716991Z"
+}.
+[2026-11-09 10:59:22Z INFO JobRunner] Total job steps: 3.
+[2026-11-09 10:59:22Z INFO JobRunner] Run all job steps.
+[2026-11-09 10:59:22Z INFO DapDebugger] DapDebugger initialized
+[2026-11-09 10:59:22Z INFO StepsRunner] Processing step: DisplayName='Run actions/checkout@v4'
+[2026-11-09 10:59:22Z INFO StepsRunner] Evaluating: success()
+[2026-11-09 10:59:22Z INFO StepsRunner] Result: true
+[2026-11-09 10:59:22Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd89832f0-f5b6-4bde-a219-fcd646d5b744', success rate: 1/1.
+[2026-11-09 10:59:22Z INFO StepsRunner] Starting the step.
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:22Z INFO StepsRunner] Which2: 'chcp'
+[2026-11-09 10:59:22Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper] Starting process:
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Working directory: 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper] Process started with process id 23948, waiting for process exit.
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper] Finished process 23948 with exit code 0, and elapsed time 00:00:00.0168568.
+[2026-11-09 10:59:22Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Actions': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions'
+[2026-11-09 10:59:22Z INFO ActionManager] Load action that reference repository from 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions\actions\checkout\v4'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Actions': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions'
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 101,
+          "col": 3,
+          "lit": "allow-unsafe-pr-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 109,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-11-09 10:59:22Z INFO ActionManager] Action pre node.js file: N/A.
+[2026-11-09 10:59:22Z INFO ActionManager] Action node.js file: dist/index.js.
+[2026-11-09 10:59:22Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2026-11-09 10:59:22Z INFO ExecutionContext] Reserve record order 5 to 8 for post job actions.
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Temp': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp'
+[2026-11-09 10:59:22Z INFO ExecutionContext] Write event payload to D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Temp': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp'
+[2026-11-09 10:59:22Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateArtifactsFileCommand, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ArtifactsListFileCommand, Runner.Worker
+[2026-11-09 10:59:22Z INFO ArtifactsListFileCommand] Wrote $GITHUB_ARTIFACTS_LIST with 0 subject(s) to 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_runner_file_commands\artifacts_list_3d5697b2-5c62-449d-909e-8553824190c3'
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "Aswan269/banksampah-kampus"
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'ref': default value evaluate result: ""
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'ssh-key': default value evaluate result: ""
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'ssh-known-hosts': default value evaluate result: ""
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'ssh-user': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 51,
+  "col": 14,
+  "lit": "git"
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 54,
+  "col": 14,
+  "lit": "true"
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'path': default value evaluate result: ""
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 59,
+  "col": 14,
+  "lit": "true"
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": ""
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": ""
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 76,
+  "col": 14,
+  "lit": "1"
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 79,
+  "col": 14,
+  "lit": "false"
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "true"
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "false"
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 94,
+  "col": 14,
+  "lit": "false"
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 97,
+  "col": 14,
+  "lit": "true"
+}
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'github-server-url': default value evaluate result: ""
+[2026-11-09 10:59:22Z INFO ActionManifestManagerLegacy] Input 'allow-unsafe-pr-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 109,
+  "col": 14,
+  "lit": "false"
+}
+[2026-11-09 10:59:22Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command error
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command group
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-11-09 10:59:22Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:22Z INFO HostContext] Well known directory 'Externals': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\externals'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper] Starting process:
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   File name: 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\externals\node24\bin\node.exe'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Arguments: '"D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Working directory: 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\banksampah-kampus\banksampah-kampus'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-11-09 10:59:22Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-11-09 10:59:22Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3cf4363b-8b62-4052-adc2-729306bfa096', success rate: 1/1.
+[2026-11-09 10:59:22Z ERR  GitHubActionsService] GET request to wss://broker.actions.githubusercontent.com/_ws/ping.sock failed. HTTP Status: SwitchingProtocols
+[2026-11-09 10:59:22Z INFO BrokerServer] Successfully started runner websocket client.
+[2026-11-09 10:59:22Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-11-09 10:59:22Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag\blocks\d2f96f27-1ec0-885b-b1ae-b44f7bf13af4_d89832f0-f5b6-4bde-a219-fcd646d5b744.1
+[2026-11-09 10:59:22Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-11-09 10:59:23Z INFO ProcessInvokerWrapper] Process started with process id 12292, waiting for process exit.
+[2026-11-09 10:59:24Z INFO AddMaskCommandExtension] Add new secret mask with length of 524
+[2026-11-09 10:59:24Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3cf4363b-8b62-4052-adc2-729306bfa096', success rate: 1/1.
+[2026-11-09 10:59:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3cf4363b-8b62-4052-adc2-729306bfa096', success rate: 1/1.
+[2026-11-09 10:59:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3cf4363b-8b62-4052-adc2-729306bfa096', success rate: 1/1.
+[2026-11-09 10:59:25Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-11-09 10:59:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3cf4363b-8b62-4052-adc2-729306bfa096', success rate: 1/1.
+[2026-11-09 10:59:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3cf4363b-8b62-4052-adc2-729306bfa096', success rate: 1/1.
+[2026-11-09 10:59:27Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3cf4363b-8b62-4052-adc2-729306bfa096', success rate: 1/1.
+[2026-11-09 10:59:32Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:32Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:32Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3cf4363b-8b62-4052-adc2-729306bfa096', success rate: 1/1.
+[2026-11-09 10:59:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3cf4363b-8b62-4052-adc2-729306bfa096', success rate: 1/1.
+[2026-11-09 10:59:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3cf4363b-8b62-4052-adc2-729306bfa096', success rate: 1/1.
+[2026-11-09 10:59:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3cf4363b-8b62-4052-adc2-729306bfa096', success rate: 1/1.
+[2026-11-09 10:59:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3cf4363b-8b62-4052-adc2-729306bfa096', success rate: 1/1.
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper] Finished process 12292 with exit code 0, and elapsed time 00:00:18.6635982.
+[2026-11-09 10:59:40Z INFO CreateStepSummaryCommand] Step Summary file (D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_runner_file_commands\step_summary_3d5697b2-5c62-449d-909e-8553824190c3) is empty; skipping attachment upload
+[2026-11-09 10:59:40Z INFO CreateArtifactsFileCommand] Processing $GITHUB_ARTIFACTS file 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_runner_file_commands\artifacts_3d5697b2-5c62-449d-909e-8553824190c3'
+[2026-11-09 10:59:40Z INFO CreateArtifactsFileCommand] $GITHUB_ARTIFACTS file is empty; nothing to process.
+[2026-11-09 10:59:40Z INFO StepsRunner] Step result: 
+[2026-11-09 10:59:40Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node24",
+  "stage": "Main",
+  "stepId": "3cf4363b-8b62-4052-adc2-729306bfa096",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 19,
+  "startTime": "2026-11-09T10:59:22.0826089Z",
+  "finishTime": "2026-11-09T10:59:40.8794559Z"
+}.
+[2026-11-09 10:59:40Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-11-09 10:59:40Z INFO StepsRunner] Current state: job state = ''
+[2026-11-09 10:59:40Z INFO StepsRunner] Processing step: DisplayName='Pull image terbaru & jalankan ulang'
+[2026-11-09 10:59:40Z INFO StepsRunner] Evaluating: success()
+[2026-11-09 10:59:40Z INFO StepsRunner] Result: true
+[2026-11-09 10:59:40Z INFO StepsRunner] Starting the step.
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:40Z INFO StepsRunner] Which2: 'chcp'
+[2026-11-09 10:59:40Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper] Starting process:
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Working directory: 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper] Process started with process id 33832, waiting for process exit.
+[2026-11-09 10:59:40Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:40Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag\blocks\d2f96f27-1ec0-885b-b1ae-b44f7bf13af4_3cf4363b-8b62-4052-adc2-729306bfa096.1
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper] Finished process 33832 with exit code 0, and elapsed time 00:00:00.0208107.
+[2026-11-09 10:59:40Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Temp': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp'
+[2026-11-09 10:59:40Z INFO ExecutionContext] Write event payload to D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Temp': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp'
+[2026-11-09 10:59:40Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-11-09 10:59:40Z INFO ArtifactsListFileCommand] Wrote $GITHUB_ARTIFACTS_LIST with 0 subject(s) to 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_runner_file_commands\artifacts_list_bea82447-6f67-4108-a634-43751b2ef26f'
+[2026-11-09 10:59:40Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command error
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command group
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-11-09 10:59:40Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-11-09 10:59:40Z INFO ScriptHandler] Which2: 'powershell'
+[2026-11-09 10:59:40Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:40Z INFO HostContext] Well known directory 'Temp': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp'
+[2026-11-09 10:59:40Z INFO ScriptHandler] Which2: 'powershell'
+[2026-11-09 10:59:40Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper] Starting process:
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\650833a6-68ed-43cd-b6e1-a120d0544c8e.ps1'"'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Working directory: 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\banksampah-kampus\banksampah-kampus'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-11-09 10:59:40Z INFO ProcessInvokerWrapper] Process started with process id 11084, waiting for process exit.
+[2026-11-09 10:59:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '3cf4363b-8b62-4052-adc2-729306bfa096', success rate: 1/1.
+[2026-11-09 10:59:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:41Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-11-09 10:59:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:41Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-11-09 10:59:42Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:42Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:42Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:47Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:47Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:47Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:47Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:48Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:48Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:48Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:48Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:49Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:49Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:49Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:49Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:50Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:51Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:51Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:51Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:51Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:52Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:52Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:52Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:52Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:52Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:53Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:53Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:53Z INFO JobServerQueue] Try to append 1 batches web console lines for record '90182ae6-f891-4203-b02f-391e653448ea', success rate: 1/1.
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper] Finished process 11084 with exit code 0, and elapsed time 00:00:12.9784828.
+[2026-11-09 10:59:53Z INFO CreateStepSummaryCommand] Step Summary file (D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_runner_file_commands\step_summary_bea82447-6f67-4108-a634-43751b2ef26f) is empty; skipping attachment upload
+[2026-11-09 10:59:53Z INFO CreateArtifactsFileCommand] Processing $GITHUB_ARTIFACTS file 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_runner_file_commands\artifacts_bea82447-6f67-4108-a634-43751b2ef26f'
+[2026-11-09 10:59:53Z INFO CreateArtifactsFileCommand] $GITHUB_ARTIFACTS file is empty; nothing to process.
+[2026-11-09 10:59:53Z INFO StepsRunner] Step result: 
+[2026-11-09 10:59:53Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "90182ae6-f891-4203-b02f-391e653448ea",
+  "stepContextName": "__run",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 14,
+  "startTime": "2026-11-09T10:59:40.8863213Z",
+  "finishTime": "2026-11-09T10:59:53.929096Z"
+}.
+[2026-11-09 10:59:53Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-11-09 10:59:53Z INFO StepsRunner] Current state: job state = ''
+[2026-11-09 10:59:53Z INFO StepsRunner] Processing step: DisplayName='Cek kesehatan lewat gateway'
+[2026-11-09 10:59:53Z INFO StepsRunner] Evaluating: success()
+[2026-11-09 10:59:53Z INFO StepsRunner] Result: true
+[2026-11-09 10:59:53Z INFO StepsRunner] Starting the step.
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:53Z INFO StepsRunner] Which2: 'chcp'
+[2026-11-09 10:59:53Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper] Starting process:
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Working directory: 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper] Process started with process id 35688, waiting for process exit.
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper] Finished process 35688 with exit code 0, and elapsed time 00:00:00.0123988.
+[2026-11-09 10:59:53Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Temp': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp'
+[2026-11-09 10:59:53Z INFO ExecutionContext] Write event payload to D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Temp': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp'
+[2026-11-09 10:59:53Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-11-09 10:59:53Z INFO ArtifactsListFileCommand] Wrote $GITHUB_ARTIFACTS_LIST with 0 subject(s) to 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_runner_file_commands\artifacts_list_e1ea00b9-8dd5-4e08-89f0-a1a2fbab8c4b'
+[2026-11-09 10:59:53Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command error
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command group
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-11-09 10:59:53Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-11-09 10:59:53Z INFO ScriptHandler] Which2: 'powershell'
+[2026-11-09 10:59:53Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:53Z INFO HostContext] Well known directory 'Temp': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp'
+[2026-11-09 10:59:53Z INFO ScriptHandler] Which2: 'powershell'
+[2026-11-09 10:59:53Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper] Starting process:
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\1df394b6-4aa8-44f3-a86a-ccbe6d5cfbe3.ps1'"'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Working directory: 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\banksampah-kampus\banksampah-kampus'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-11-09 10:59:53Z INFO ProcessInvokerWrapper] Process started with process id 13236, waiting for process exit.
+[2026-11-09 10:59:54Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9f4162ab-ca8c-43f9-a3c2-54abac0d82a4', success rate: 1/1.
+[2026-11-09 10:59:54Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper] Finished process 13236 with exit code 0, and elapsed time 00:00:00.4352009.
+[2026-11-09 10:59:54Z INFO CreateStepSummaryCommand] Step Summary file (D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_runner_file_commands\step_summary_e1ea00b9-8dd5-4e08-89f0-a1a2fbab8c4b) is empty; skipping attachment upload
+[2026-11-09 10:59:54Z INFO CreateArtifactsFileCommand] Processing $GITHUB_ARTIFACTS file 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_runner_file_commands\artifacts_e1ea00b9-8dd5-4e08-89f0-a1a2fbab8c4b'
+[2026-11-09 10:59:54Z INFO CreateArtifactsFileCommand] $GITHUB_ARTIFACTS file is empty; nothing to process.
+[2026-11-09 10:59:54Z INFO StepsRunner] Step result: 
+[2026-11-09 10:59:54Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "9f4162ab-ca8c-43f9-a3c2-54abac0d82a4",
+  "stepContextName": "__run_2",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-11-09T10:59:53.9299317Z",
+  "finishTime": "2026-11-09T10:59:54.4089119Z"
+}.
+[2026-11-09 10:59:54Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-11-09 10:59:54Z INFO StepsRunner] Current state: job state = ''
+[2026-11-09 10:59:54Z INFO StepsRunner] Processing step: DisplayName='Post Run actions/checkout@v4'
+[2026-11-09 10:59:54Z INFO StepsRunner] Evaluating: always()
+[2026-11-09 10:59:54Z INFO StepsRunner] Result: true
+[2026-11-09 10:59:54Z INFO StepsRunner] Starting the step.
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:54Z INFO StepsRunner] Which2: 'chcp'
+[2026-11-09 10:59:54Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper] Starting process:
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Working directory: 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-11-09 10:59:54Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9f4162ab-ca8c-43f9-a3c2-54abac0d82a4', success rate: 1/1.
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper] Process started with process id 25680, waiting for process exit.
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper] Finished process 25680 with exit code 0, and elapsed time 00:00:00.0325123.
+[2026-11-09 10:59:54Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Actions': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions'
+[2026-11-09 10:59:54Z INFO ActionManager] Load action that reference repository from 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions\actions\checkout\v4'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Actions': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions'
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 101,
+          "col": 3,
+          "lit": "allow-unsafe-pr-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 109,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-11-09 10:59:54Z INFO ActionManager] Action pre node.js file: N/A.
+[2026-11-09 10:59:54Z INFO ActionManager] Action node.js file: dist/index.js.
+[2026-11-09 10:59:54Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Temp': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp'
+[2026-11-09 10:59:54Z INFO ExecutionContext] Write event payload to D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Work': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Temp': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp'
+[2026-11-09 10:59:54Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-11-09 10:59:54Z INFO ArtifactsListFileCommand] Wrote $GITHUB_ARTIFACTS_LIST with 0 subject(s) to 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_runner_file_commands\artifacts_list_71bcc8fe-9ca4-4c46-ac3a-190932d958c4'
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "Aswan269/banksampah-kampus"
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'ref': default value evaluate result: ""
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'ssh-key': default value evaluate result: ""
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'ssh-known-hosts': default value evaluate result: ""
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'ssh-user': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 51,
+  "col": 14,
+  "lit": "git"
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 54,
+  "col": 14,
+  "lit": "true"
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'path': default value evaluate result: ""
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 59,
+  "col": 14,
+  "lit": "true"
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": ""
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": ""
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 76,
+  "col": 14,
+  "lit": "1"
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 79,
+  "col": 14,
+  "lit": "false"
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "true"
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "false"
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 94,
+  "col": 14,
+  "lit": "false"
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 97,
+  "col": 14,
+  "lit": "true"
+}
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'github-server-url': default value evaluate result: ""
+[2026-11-09 10:59:54Z INFO ActionManifestManagerLegacy] Input 'allow-unsafe-pr-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 109,
+  "col": 14,
+  "lit": "false"
+}
+[2026-11-09 10:59:54Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command error
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command group
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-11-09 10:59:54Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:54Z INFO HostContext] Well known directory 'Externals': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\externals'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper] Starting process:
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   File name: 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\externals\node24\bin\node.exe'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Arguments: '"D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Working directory: 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\banksampah-kampus\banksampah-kampus'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-11-09 10:59:54Z INFO ProcessInvokerWrapper] Process started with process id 35652, waiting for process exit.
+[2026-11-09 10:59:54Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2026-11-09 10:59:54Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ae72c931-d526-46b6-9cce-13e44ff4be02', success rate: 1/1.
+[2026-11-09 10:59:54Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-11-09 10:59:54Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag\blocks\d2f96f27-1ec0-885b-b1ae-b44f7bf13af4_90182ae6-f891-4203-b02f-391e653448ea.1
+[2026-11-09 10:59:54Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ae72c931-d526-46b6-9cce-13e44ff4be02', success rate: 1/1.
+[2026-11-09 10:59:55Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-11-09 10:59:55Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:55Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-11-09 10:59:55Z INFO ProcessInvokerWrapper] Finished process 35652 with exit code 0, and elapsed time 00:00:00.8356653.
+[2026-11-09 10:59:55Z INFO CreateStepSummaryCommand] Step Summary file (D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_runner_file_commands\step_summary_71bcc8fe-9ca4-4c46-ac3a-190932d958c4) is empty; skipping attachment upload
+[2026-11-09 10:59:55Z INFO CreateArtifactsFileCommand] Processing $GITHUB_ARTIFACTS file 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp\_runner_file_commands\artifacts_71bcc8fe-9ca4-4c46-ac3a-190932d958c4'
+[2026-11-09 10:59:55Z INFO CreateArtifactsFileCommand] $GITHUB_ARTIFACTS file is empty; nothing to process.
+[2026-11-09 10:59:55Z INFO StepsRunner] Step result: 
+[2026-11-09 10:59:55Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node24",
+  "stage": "Post",
+  "stepId": "ae72c931-d526-46b6-9cce-13e44ff4be02",
+  "result": "succeeded",
+  "errorMessages": [
+    "The process 'C:\\Program Files\\Git\\cmd\\git.exe' failed with exit code 128"
+  ],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-11-09T10:59:54.4127847Z",
+  "finishTime": "2026-11-09T10:59:55.3184911Z"
+}.
+[2026-11-09 10:59:55Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-11-09 10:59:55Z INFO StepsRunner] Current state: job state = ''
+[2026-11-09 10:59:55Z INFO JobRunner] Finalize job.
+[2026-11-09 10:59:55Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:55Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:55Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:55Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 10:59:55Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 10:59:55Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 10:59:55Z INFO JobExtension] Initialize Env context
+[2026-11-09 10:59:55Z INFO JobExtension] Initialize steps context
+[2026-11-09 10:59:55Z INFO JobExtension] Total accessible running process: 344.
+[2026-11-09 10:59:55Z INFO JobExtension] Inspecting process environment variables. PID: 8736 (docker)
+[2026-11-09 10:59:55Z INFO JobExtension] Inspecting process environment variables. PID: 33092 (docker)
+[2026-11-09 10:59:55Z INFO JobExtension] Inspecting process environment variables. PID: 21468 (conhost)
+[2026-11-09 10:59:55Z INFO JobExtension] Inspecting process environment variables. PID: 9152 (conhost)
+[2026-11-09 10:59:55Z INFO JobExtension] Wait for all connectivity checks to finish.
+[2026-11-09 10:59:55Z INFO JobExtension] Connectivity check result: {
+  "endpointUrl": "https://broker.actions.githubusercontent.com/health",
+  "endpointIPs": null,
+  "startTime": "2026-11-09T10:59:22.0615044Z",
+  "statusCode": "http_OK",
+  "requestId": "1FB5:395F53:725830C:7362502:6AF1A789",
+  "httpRequestDurationInMs": 808,
+  "dnsResolutionDurationInMs": 0,
+  "dnsError": null
+}
+[2026-11-09 10:59:55Z INFO JobExtension] Connectivity check result: {
+  "endpointUrl": "https://token.actions.githubusercontent.com/ready",
+  "endpointIPs": null,
+  "startTime": "2026-11-09T10:59:22.0621955Z",
+  "statusCode": "http_NoContent",
+  "requestId": "1FBF:12B336:1CA74B8:1DF07E3:6AF1A789",
+  "httpRequestDurationInMs": 953,
+  "dnsResolutionDurationInMs": 0,
+  "dnsError": null
+}
+[2026-11-09 10:59:55Z INFO JobExtension] Connectivity check result: {
+  "endpointUrl": "https://run.actions.githubusercontent.com/health",
+  "endpointIPs": null,
+  "startTime": "2026-11-09T10:59:22.0624815Z",
+  "statusCode": "http_OK",
+  "requestId": "1F80:41857:47EEE1D:48A34F2:6AF1A789",
+  "httpRequestDurationInMs": 850,
+  "dnsResolutionDurationInMs": 0,
+  "dnsError": null
+}
+[2026-11-09 10:59:55Z INFO JobExtension] Wait for all connectivity and DNS checks to finish.
+[2026-11-09 10:59:55Z INFO JobExtension] Connectivity and DNS check result: {
+  "endpointUrl": "https://github.com/_dns",
+  "endpointIPs": [
+    "20.205.243.166"
+  ],
+  "startTime": "2026-11-09T10:59:22.0627744Z",
+  "statusCode": "http_OK",
+  "requestId": null,
+  "httpRequestDurationInMs": 102,
+  "dnsResolutionDurationInMs": 41,
+  "dnsError": null
+}
+[2026-11-09 10:59:55Z INFO JobExtension] Connectivity and DNS check result: {
+  "endpointUrl": "https://api.github.com/_dns",
+  "endpointIPs": [
+    "20.205.243.168"
+  ],
+  "startTime": "2026-11-09T10:59:22.0631549Z",
+  "statusCode": "http_OK",
+  "requestId": null,
+  "httpRequestDurationInMs": 97,
+  "dnsResolutionDurationInMs": 40,
+  "dnsError": null
+}
+[2026-11-09 10:59:55Z INFO JobExtension] Connectivity and DNS check result: {
+  "endpointUrl": "https://codeload.github.com/_dns",
+  "endpointIPs": [
+    "20.205.243.165"
+  ],
+  "startTime": "2026-11-09T10:59:22.0633585Z",
+  "statusCode": "http_OK",
+  "requestId": "1FB3:26F7E5:19443A:330055:6AF1A789",
+  "httpRequestDurationInMs": 302,
+  "dnsResolutionDurationInMs": 1,
+  "dnsError": null
+}
+[2026-11-09 10:59:55Z INFO JobExtension] Connectivity and DNS check result: {
+  "endpointUrl": "https://pkg.github.com/_dns",
+  "endpointIPs": [
+    "20.205.243.164"
+  ],
+  "startTime": "2026-11-09T10:59:22.0635474Z",
+  "statusCode": "http_OK",
+  "requestId": "1F81:16A556:682BD7:7BE083:6AF1A789",
+  "httpRequestDurationInMs": 329,
+  "dnsResolutionDurationInMs": 198,
+  "dnsError": null
+}
+[2026-11-09 10:59:55Z INFO JobExtension] Connectivity and DNS check result: {
+  "endpointUrl": "https://copilot-proxy.githubusercontent.com/_dns",
+  "endpointIPs": [
+    "52.175.140.176"
+  ],
+  "startTime": "2026-11-09T10:59:22.0637609Z",
+  "statusCode": "http_OK",
+  "requestId": null,
+  "httpRequestDurationInMs": 334,
+  "dnsResolutionDurationInMs": 40,
+  "dnsError": null
+}
+[2026-11-09 10:59:55Z INFO JobExtension] Runner websocket probe result: {"connected":true,"connectCount":1,"lastCloseReason":"job_completed","totalDurationMs":33343,"errors":[]}
+[2026-11-09 10:59:55Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "5081ea80-9a77-445a-b911-ab555c5366be",
+  "result": "succeeded",
+  "errorMessages": [
+    "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/"
+  ],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-11-09T10:59:55.3314827Z",
+  "finishTime": "2026-11-09T10:59:55.4202808Z"
+}.
+[2026-11-09 10:59:55Z INFO JobRunner] Job result after all job steps finish: Succeeded
+[2026-11-09 10:59:55Z INFO JobRunner] Completing the job execution context.
+[2026-11-09 10:59:55Z INFO JobRunner] Shutting down the job server queue.
+[2026-11-09 10:59:55Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2026-11-09 10:59:55Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-11-09 10:59:55Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag\blocks\d2f96f27-1ec0-885b-b1ae-b44f7bf13af4_9f4162ab-ca8c-43f9-a3c2-54abac0d82a4.1
+[2026-11-09 10:59:56Z INFO JobServerQueue] Tried to upload 2 file(s) to results, success rate: 2/2.
+[2026-11-09 10:59:57Z INFO JobServerQueue] All queue process task stopped.
+[2026-11-09 10:59:57Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ae72c931-d526-46b6-9cce-13e44ff4be02', success rate: 1/1.
+[2026-11-09 10:59:57Z INFO JobServerQueue] Try to append 1 batches web console lines for record '5081ea80-9a77-445a-b911-ab555c5366be', success rate: 1/1.
+[2026-11-09 10:59:57Z INFO JobServerQueue] Web console line queue drained.
+[2026-11-09 10:59:57Z INFO JobServerQueue] Uploading 3 files in one shot.
+[2026-11-09 10:59:57Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2026-11-09 10:59:57Z INFO JobServerQueue] File upload queue drained.
+[2026-11-09 10:59:57Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-11-09 10:59:57Z INFO JobServerQueue] Uploading 3 file(s) in one shot through results service.
+[2026-11-09 10:59:57Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-11-09 10:59:57Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag\blocks\d2f96f27-1ec0-885b-b1ae-b44f7bf13af4_ae72c931-d526-46b6-9cce-13e44ff4be02.1
+[2026-11-09 10:59:58Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-11-09 10:59:58Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag\blocks\d2f96f27-1ec0-885b-b1ae-b44f7bf13af4_5081ea80-9a77-445a-b911-ab555c5366be.1
+[2026-11-09 10:59:59Z INFO JobServerQueue] Got a job log file to send to results service.
+[2026-11-09 10:59:59Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag\blocks\d2f96f27-1ec0-885b-b1ae-b44f7bf13af4_ca662d34-9e0a-5a6f-972d-8b03617cba53.1
+[2026-11-09 11:00:00Z INFO JobServerQueue] Tried to upload 3 file(s) to results, success rate: 3/3.
+[2026-11-09 11:00:00Z INFO JobServerQueue] Results upload queue drained.
+[2026-11-09 11:00:00Z INFO JobServerQueue] Timeline update queue drained.
+[2026-11-09 11:00:00Z INFO JobServerQueue] Disposing job server ...
+[2026-11-09 11:00:00Z INFO JobServerQueue] Disposing results server ...
+[2026-11-09 11:00:00Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2026-11-09 11:00:00Z INFO TempDirectoryManager] Cleaning runner temp folder: D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_work\_temp
+[2026-11-09 11:00:00Z INFO HostContext] Well known directory 'Bin': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\bin'
+[2026-11-09 11:00:00Z INFO HostContext] Well known directory 'Root': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner'
+[2026-11-09 11:00:00Z INFO HostContext] Well known directory 'Diag': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag'
+[2026-11-09 11:00:00Z INFO HostContext] Well known config file 'Telemetry': 'D:\hahahaha\New folder (4)\New folder (2)\bank-sampah\actions-runner\_diag\.telemetry'
+[2026-11-09 11:00:00Z INFO JobRunner] Raising job completed against run service
+[2026-11-09 11:00:01Z INFO Worker] Job completed.
