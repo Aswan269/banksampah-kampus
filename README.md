@@ -25,9 +25,9 @@ Setiap anggota memegang satu service, satu topik container, dan satu topik CI/CD
 |---|---|---|---|
 | Maria Hana Gultom | Auth (`auth/`) | Variabel lingkungan dan secret | Pemicu workflow, job test, matrix |
 | Arisanti Nurlaili | Setoran (`setoran/`, `_shared/`) | Container database (volume, healthcheck) | Pengujian otomatis, SKIP_DB_INIT |
-| Muhammad Aswan Taqiy (ketua) | Reward (`reward/`, `docker-compose.yml`) | Jaringan antar container, struktur Compose | needs, syarat if, Secrets |
+| Alvin Charles | Reward (`reward/`, `docker-compose.yml`) | Jaringan antar container, struktur Compose | needs, syarat if, Secrets |
 | Josua Daichi | Laporan (`laporan/`, `nginx/`) | Gateway Nginx | Job build-push ke registry |
-| Alvin Charles | Frontend (`frontend/`, `.github/`) | Container frontend, pemantauan container | Job deploy |
+| Muhammad Aswan Taqiy (ketua) | Frontend (`frontend/`, `.github/`) | Container frontend, pemantauan container | Job deploy |
 
 ## CI/CD (.github/workflows/ci-cd.yml)
 
